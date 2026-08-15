@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idea Check"
+  short_description: "以證據框架嚴格檢驗創業點子、產品策略、競品、商業化與風險"
+  default_prompt: "Use $idea-check to rigorously evaluate this startup or product idea, identify contrary evidence and fatal assumptions, and propose decision-changing validation tests."
