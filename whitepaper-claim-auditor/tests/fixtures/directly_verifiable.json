@@ -1,0 +1,6 @@
+{
+  "name": "directly verifiable",
+  "claim": {"claim_id":"C-001","parent_id":null,"source_location":"section-1:p1","original_text":"Google 使用 structured data 來幫助理解網頁內容。","atomic_claim":"Google 使用 structured data 來幫助理解網頁內容。","claim_type":"FACTUAL","verification_required":true,"dependencies":[],"author_assertion_level":"moderate","risk_flags":[]},
+  "evidence": [{"evidence_id":"E-001","claim_id":"C-001","source_title":"Structured data documentation","source_author":"Google Search Central","source_type":"official_documentation","publisher_or_org":"Google","year":2026,"url_or_doi":"https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data","document_locator":"Introduction","passage":"Google Search works hard to understand the content of a page. You can help us by providing explicit clues about the meaning of a page with structured data.","relation":"DIRECT_SUPPORT","source_quality":"A","retrieval_query":"site:developers.google.com structured data understand page content","notes":"Official documentation directly states the limited claim.","causal_design":false,"scope_match":true,"boundary_condition":false,"citation_key":"google-structured-data","retrieved_at":null}],
+  "expected_verdict":"VERIFIED"
+}

@@ -1,59 +1,29 @@
-# Internship Offer Decision
+# Skills
 
-給已完成面試、正在決定是否接受實習 Offer 的大學生使用的跨工具 Agent Skill。它可用於 Codex 與 Claude Code。
+兩個獨立的 Agent Skill，可用於 Codex 與 Claude Code。
 
-它不做企業級徵信，也不產生下一輪面試問題。它用現在已有的資料重建實習生實際可能做的工作，並以保守的 Base Case 做出可立即執行的 `Take`、`Conditional Take` 或 `Decline` 判斷。
+| Skill | 做什麼 |
+| --- | --- |
+| [`idea-check`](idea-check) | 用一致、可重複、以證據為基礎的方法壓力測試創業點子與產品構想：市場需求、競品與替代方案、商業化與定價、護城河、二階風險、go/no-go 判斷，並設計低成本驗證實驗。 |
+| [`whitepaper-claim-auditor`](whitepaper-claim-auditor) | 稽核白皮書、研究報告與論文：抽取主張、拆解依賴、檢索段落級證據、判斷主張與來源的蘊涵關係、給出保守的六態判定，並檢查引用完整性。以壓低 False Support Rate 為優先，而非引用數量。 |
 
-## 它會產生什麼
+## 安裝
 
-- 一份完整的 `report.json`，作為唯一資料來源。
-- 一份可閱讀的 `report.md` 與 30 秒能看懂的 `report.html`。
-- 五項分數：工作內容含金量、學習增量、履歷成果潛力、團隊／公司加成、整體投入報酬。
-- 三則可保守寫入履歷的實習經驗；每則附可量化線索、可偷師的方法與不可誇大的 Base Case 邊界。
+兩者都是標準 `SKILL.md` 格式，不依賴任一平台的專屬欄位。
 
-未知資訊不會讓 Skill 拒絕決策，也不會轉成要求使用者回去問公司；它只會降低信心並限制正式評價。
+**Codex**：把 skill 資料夾放進 Codex 的 Skills 目錄，入口是 `SKILL.md`。
 
-## 使用方式
-
-提供盡可能多的輸入：公司、職稱、JD、面試筆記、Offer 條件、學生背景與同期其他機會。
-
-資料較少時仍會得到當前最佳 Verdict，但信心較低；面試與 Offer 資料只會提高判斷精度，不是產生決策的前提。
-
-### Codex
-
-將 [internship-offer-decision](internship-offer-decision) 資料夾放入 Codex 的 Skills 目錄，或從該目錄安裝。入口是 `SKILL.md`。
-
-### Claude Code
-
-Claude Code 使用同一份標準 `SKILL.md`，不需要轉換。把整個資料夾複製或建立 symbolic link 到下列其中一處：
+**Claude Code**：複製或建立 symbolic link 到下列其中一處，資料夾名稱即指令名稱，請勿更動：
 
 ```text
-~/.claude/skills/internship-offer-decision/          # 個人層級
-<project>/.claude/skills/internship-offer-decision/  # 專案層級
+~/.claude/skills/<skill-name>/          # 個人層級
+<project>/.claude/skills/<skill-name>/  # 專案層級
 ```
 
-之後可直接用 `/internship-offer-decision` 呼叫，或以自然語言要求 Claude 協助判斷實習 Offer。Claude Code 依目錄名稱決定指令名稱，因此請保留 `internship-offer-decision` 這個資料夾名稱。
+## 相關專案
 
-此專案的 frontmatter 只使用 Agent Skills／Claude Code 共同支援的 `name` 與 `description`；沒有依賴 Codex 專屬欄位或 Claude Code 專屬動態指令。
+求職相關的 skill 已獨立，不在此 repo：
 
-## 專案結構
-
-```text
-internship-offer-decision/       # 可由 Codex 與 Claude Code 共用的 Skill、規範、schema、驗證器與 HTML 模板
-```
-
-## 驗證與輸出
-
-```bash
-python internship-offer-decision/scripts/validate_report.py <report.json> --markdown <report.md> --html <report.html>
-```
-
-HTML 報告由同一份 `report.json` 產生：
-
-```bash
-python internship-offer-decision/scripts/render_html.py <report.json> <report.html>
-```
-
-## 核心原則
-
-> 研究深度由資訊是否會改變 Offer Decision 決定，而不是由網路上還能找到多少資料決定。
+- [career-tools](https://github.com/Wenqing950519/career-tools) — 給大學生的求職工具箱，平台總庫
+- [career-offercheck](https://github.com/Wenqing950519/career-offercheck) — 實習 offer 去留決策（原 `internship-offer-decision`，已更名並移出本 repo）
+- [career-skill-gap](https://github.com/Wenqing950519/career-skill-gap) ／ [career-resume-composer](https://github.com/Wenqing950519/career-resume-composer) ／ [career-opportunity-catch](https://github.com/Wenqing950519/career-opportunity-catch)

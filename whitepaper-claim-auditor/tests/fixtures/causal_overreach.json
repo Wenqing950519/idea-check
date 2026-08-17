@@ -1,0 +1,6 @@
+{
+  "name": "causal overreach from correlation",
+  "claim": {"claim_id":"C-005","parent_id":null,"source_location":"section-5:p1","original_text":"較高的內容頻率直接導致較高的品牌引用率。","atomic_claim":"較高的內容頻率直接導致較高的品牌引用率。","claim_type":"CAUSAL","verification_required":true,"dependencies":[],"author_assertion_level":"strong","risk_flags":["CAUSAL_LANGUAGE"]},
+  "evidence": [{"evidence_id":"E-006","claim_id":"C-005","source_title":"Observational content survey","source_author":"Analyst Group","source_type":"industry_research","publisher_or_org":"Analyst Group","year":2026,"url_or_doi":"https://example.invalid/observational-survey","document_locator":"Table 3","passage":"Content frequency was positively correlated with observed brand citation rate.","relation":"PARTIAL_SUPPORT","source_quality":"B","retrieval_query":"content frequency brand citation correlation","notes":"Observational correlation does not identify a causal effect.","causal_design":false,"boundary_condition":false,"citation_key":"survey-2026","retrieved_at":null}],
+  "expected_verdict":"UNVERIFIED"
+}
