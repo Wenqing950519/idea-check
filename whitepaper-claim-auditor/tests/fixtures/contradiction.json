@@ -1,9 +1,0 @@
-{
-  "name": "boundary-conditioned contradiction",
-  "claim": {"claim_id":"C-004","parent_id":null,"source_location":"section-4:p1","original_text":"介入措施 X 普遍提高所有族群的結果 Y。","atomic_claim":"介入措施 X 普遍提高所有族群的結果 Y。","claim_type":"GENERALIZATION","verification_required":true,"dependencies":[],"author_assertion_level":"strong","risk_flags":["UNIVERSAL_LANGUAGE"]},
-  "evidence": [
-    {"evidence_id":"E-004","claim_id":"C-004","source_title":"Study in population A","source_author":"Research Team A","source_type":"peer_reviewed_paper","publisher_or_org":"Journal A","year":2025,"url_or_doi":"doi:10.0000/example-a","document_locator":"Results","passage":"In population A, intervention X improved outcome Y.","relation":"DIRECT_SUPPORT","source_quality":"A","retrieval_query":"intervention X outcome Y population A","notes":"Direct support in one population only.","causal_design":true,"boundary_condition":true,"citation_key":"study-a","retrieved_at":null},
-    {"evidence_id":"E-005","claim_id":"C-004","source_title":"Study in population B","source_author":"Research Team B","source_type":"systematic_review","publisher_or_org":"Journal B","year":2026,"url_or_doi":"doi:10.0000/example-b","document_locator":"Subgroup analysis","passage":"No improvement was observed in population B under the same intervention.","relation":"CONTRADICTS","source_quality":"A","retrieval_query":"intervention X no effect subgroup population B","notes":"High-quality contradiction identifies a population boundary.","causal_design":true,"boundary_condition":true,"citation_key":"study-b","retrieved_at":null}
-  ],
-  "expected_verdict":"QUALIFIED"
-}

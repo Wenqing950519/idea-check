@@ -1,6 +1,0 @@
-{
-  "name": "original local hypothesis",
-  "claim": {"claim_id":"C-003","parent_id":null,"source_location":"section-3:p2","original_text":"2026 台灣餐飲品牌整體 GEO 成熟度偏低。","atomic_claim":"2026 台灣餐飲品牌整體 GEO 成熟度偏低。","claim_type":"ORIGINAL_HYPOTHESIS","verification_required":true,"dependencies":[],"author_assertion_level":"strong","risk_flags":["LOCAL_GENERALIZATION","REPRESENTATIVENESS_REQUIRED"]},
-  "evidence": [],
-  "expected_verdict":"ORIGINAL_HYPOTHESIS"
-}
