@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/document.schema.json",
+  "title": "Indexed Research Document",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document_id", "source_id", "title", "content", "locator", "mime_type", "content_hash", "metadata", "created_at"],
+  "properties": {
+    "document_id": {"type": "string", "pattern": "^DOC-[a-f0-9]{16}$"},
+    "source_id": {"type": "string", "pattern": "^SRC-[a-f0-9]{16}$"},
+    "title": {"type": "string", "minLength": 1},
+    "content": {"type": "string"},
+    "locator": {"type": "string", "minLength": 1},
+    "mime_type": {"type": "string", "minLength": 1},
+    "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "metadata": {"type": "object"},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

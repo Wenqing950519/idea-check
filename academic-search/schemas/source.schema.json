@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/source.schema.json",
+  "title": "Canonical Research Source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "provider", "provider_id", "title", "authors", "year", "doi", "url", "source_type", "publication_status", "abstract", "oa_url", "cited_by_count", "referenced_ids", "metadata", "created_at"],
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^SRC-[a-f0-9]{16}$"},
+    "provider": {"type": "string", "minLength": 1},
+    "provider_id": {"type": "string"},
+    "title": {"type": "string", "minLength": 1},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "year": {"type": ["integer", "null"], "minimum": 1800, "maximum": 2200},
+    "doi": {"type": ["string", "null"]},
+    "url": {"type": ["string", "null"]},
+    "source_type": {"type": "string", "minLength": 1},
+    "publication_status": {"type": "string", "minLength": 1},
+    "abstract": {"type": "string"},
+    "oa_url": {"type": ["string", "null"]},
+    "cited_by_count": {"type": "integer", "minimum": 0},
+    "referenced_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "metadata": {"type": "object"},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

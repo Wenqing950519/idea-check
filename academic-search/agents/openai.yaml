@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Search"
+  short_description: "Research Evidence Engine with conservative claim verification"
+  default_prompt: "Use $academic-search to search local evidence first, discover academic sources when needed, and report only claims supported by exact-locator evidence."

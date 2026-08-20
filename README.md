@@ -5,7 +5,7 @@
 | Skill | 做什麼 |
 | --- | --- |
 | [`idea-check`](idea-check) | 用一致、可重複、以證據為基礎的方法壓力測試創業點子與產品構想：市場需求、競品與替代方案、商業化與定價、護城河、二階風險、go/no-go 判斷，並設計低成本驗證實驗。 |
-| [`whitepaper-claim-auditor`](whitepaper-claim-auditor) | 稽核白皮書、研究報告與論文：抽取主張、拆解依賴、檢索段落級證據、判斷主張與來源的蘊涵關係、給出保守的六態判定，並檢查引用完整性。以壓低 False Support Rate 為優先，而非引用數量。 |
+| [`academic-search`](academic-search) | Research Evidence Engine：先查本地 SQLite evidence KB，再視需要用 OpenAlex 做學術探索；保存來源、全文、段落級證據、反證、四態研究主張、假設、分析與 action ledger。原 Whitepaper Claim Auditor 以 compatibility workflow 保留。 |
 
 ## 安裝
 

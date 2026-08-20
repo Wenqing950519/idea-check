@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/analysis.schema.json",
+  "title": "Analysis Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["analysis_id", "title", "status", "command", "input_locator", "output_locator", "summary", "metadata", "created_at"],
+  "properties": {
+    "analysis_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["PLANNED", "EXECUTED", "FAILED"]},
+    "command": {"type": ["string", "null"]},
+    "input_locator": {"type": ["string", "null"]},
+    "output_locator": {"type": ["string", "null"]},
+    "summary": {"type": "string"},
+    "metadata": {"type": "object"},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

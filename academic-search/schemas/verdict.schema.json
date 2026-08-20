@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/legacy/verdict.schema.json",
+  "title": "Claim Verdict",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "verdict", "reason", "evidence_ids", "inference_gaps", "recommended_action", "human_review_required"],
+  "properties": {
+    "claim_id": {"type": "string", "pattern": "^C-[0-9]{3}(?:-[A-Z0-9]+)*$"},
+    "verdict": {"enum": ["VERIFIED", "SUPPORTED", "QUALIFIED", "UNVERIFIED", "CONTRADICTED", "ORIGINAL_HYPOTHESIS"]},
+    "reason": {"type": "string", "minLength": 1},
+    "evidence_ids": {"type": "array", "items": {"type": "string", "pattern": "^E-[0-9]{3,}$"}, "uniqueItems": true},
+    "inference_gaps": {"type": "array", "items": {"type": "string"}},
+    "recommended_action": {"type": "string", "minLength": 1},
+    "human_review_required": {"type": "boolean"},
+    "risk_flags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}

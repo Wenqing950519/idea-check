@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/legacy/audit.schema.json",
+  "title": "Legacy Whitepaper Claim Audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summary", "claims", "evidence", "verdicts", "citation_audit", "human_review_queue"],
+  "properties": {
+    "summary": {
+      "type": "object",
+      "required": ["total_claims", "verification_required_claims", "verdict_counts", "high_risk_claims"],
+      "properties": {
+        "total_claims": {"type": "integer", "minimum": 0},
+        "verification_required_claims": {"type": "integer", "minimum": 0},
+        "verdict_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "high_risk_claims": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "claims": {"type": "array", "items": {"$ref": "claim.schema.json"}},
+    "evidence": {"type": "array", "items": {"$ref": "evidence.schema.json"}},
+    "verdicts": {"type": "array", "items": {"$ref": "verdict.schema.json"}},
+    "citation_audit": {
+      "type": "object",
+      "required": ["accuracy_issues", "uncited_claim_ids", "unused_evidence_ids", "citation_concentration", "false_support_count"],
+      "properties": {
+        "accuracy_issues": {"type": "array", "items": {"type": "object"}},
+        "uncited_claim_ids": {"type": "array", "items": {"type": "string"}},
+        "unused_evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "citation_concentration": {"type": "object"},
+        "false_support_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "human_review_queue": {"type": "array", "items": {"type": "object"}}
+  }
+}

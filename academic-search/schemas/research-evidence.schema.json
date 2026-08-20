@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/research-evidence.schema.json",
+  "title": "Research Evidence Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["evidence_id", "source_id", "document_id", "claim_id", "passage", "locator", "polarity", "retrieval_query", "score", "source_quality", "metadata", "created_at"],
+  "properties": {
+    "evidence_id": {"type": "string", "pattern": "^EV-[a-f0-9]{16}$"},
+    "source_id": {"type": "string", "pattern": "^SRC-[a-f0-9]{16}$"},
+    "document_id": {"type": "string", "pattern": "^DOC-[a-f0-9]{16}$"},
+    "claim_id": {"type": ["string", "null"]},
+    "passage": {"type": "string", "minLength": 1},
+    "locator": {"type": "string", "minLength": 1},
+    "polarity": {"enum": ["SUPPORT", "PARTIAL", "CONTRADICT", "CONTEXT"]},
+    "retrieval_query": {"type": "string"},
+    "score": {"type": "number", "minimum": 0},
+    "source_quality": {"type": "string"},
+    "metadata": {"type": "object"},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

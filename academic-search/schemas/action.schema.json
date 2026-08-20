@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/action.schema.json",
+  "title": "Research Action Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["action_id", "action_type", "status", "target_id", "provider", "query", "detail", "created_at"],
+  "properties": {
+    "action_id": {"type": "string", "pattern": "^ACT-[a-f0-9]{16}$"},
+    "action_type": {"enum": ["SEARCH_EXECUTED", "SOURCE_FETCHED", "FULLTEXT_PARSED", "SOURCE_INDEXED", "EVIDENCE_RETRIEVED", "CITATION_VERIFIED", "ANALYSIS_EXECUTED", "REVIEW_EXECUTED"]},
+    "status": {"enum": ["SUCCESS", "FAILED", "SKIPPED"]},
+    "target_id": {"type": ["string", "null"]},
+    "provider": {"type": ["string", "null"]},
+    "query": {"type": ["string", "null"]},
+    "detail": {"type": "object"},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

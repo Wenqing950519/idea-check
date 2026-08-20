@@ -1,4 +1,0 @@
-interface:
-  display_name: "Whitepaper Claim Auditor"
-  short_description: "Audit claims against passage-level evidence"
-  default_prompt: "Use $whitepaper-claim-auditor to audit this whitepaper without overstating evidentiary support."

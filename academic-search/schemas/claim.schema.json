@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/legacy/claim.schema.json",
+  "title": "Atomic Claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id", "parent_id", "source_location", "original_text",
+    "atomic_claim", "claim_type", "verification_required",
+    "dependencies", "author_assertion_level"
+  ],
+  "properties": {
+    "claim_id": {"type": "string", "pattern": "^C-[0-9]{3}(?:-[A-Z0-9]+)*$"},
+    "parent_id": {"type": ["string", "null"], "pattern": "^C-[0-9]{3}(?:-[A-Z0-9]+)*$"},
+    "source_location": {"type": "string", "minLength": 1},
+    "original_text": {"type": "string", "minLength": 1},
+    "atomic_claim": {"type": "string", "minLength": 1},
+    "claim_type": {
+      "enum": ["FACTUAL", "CAUSAL", "COMPARATIVE", "DEFINITIONAL", "QUANTITATIVE", "PREDICTIVE", "GENERALIZATION", "METHODOLOGICAL", "INTERPRETIVE", "NORMATIVE", "ORIGINAL_HYPOTHESIS"]
+    },
+    "verification_required": {"type": "boolean"},
+    "dependencies": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^C-[0-9]{3}(?:-[A-Z0-9]+)*$"},
+      "uniqueItems": true
+    },
+    "author_assertion_level": {"enum": ["weak", "moderate", "strong"]},
+    "risk_flags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "notes": {"type": "string"}
+  }
+}

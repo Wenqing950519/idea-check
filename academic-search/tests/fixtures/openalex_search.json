@@ -1,0 +1,35 @@
+{
+  "meta": {"count": 2, "page": 1, "per_page": 2},
+  "results": [
+    {
+      "id": "https://openalex.org/W100",
+      "doi": "https://doi.org/10.1000/GEO.1",
+      "display_name": "Generative Search Citation Selection",
+      "publication_year": 2026,
+      "publication_date": "2026-02-10",
+      "type": "article",
+      "authorships": [{"author": {"display_name": "Ada Researcher"}}],
+      "primary_location": {"landing_page_url": "https://example.org/w100", "source": {"display_name": "Journal of Search"}},
+      "open_access": {"is_oa": true, "oa_status": "gold", "oa_url": "https://example.org/w100.pdf"},
+      "cited_by_count": 12,
+      "referenced_works": ["https://openalex.org/W50"],
+      "abstract_inverted_index": {"Citation": [0], "selection": [1], "depends": [2], "on": [3], "retrieval": [4]},
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W101",
+      "doi": null,
+      "display_name": "A Frontier GEO Preprint",
+      "publication_year": 2025,
+      "publication_date": "2025-11-01",
+      "type": "preprint",
+      "authorships": [],
+      "primary_location": {},
+      "open_access": {"is_oa": true},
+      "cited_by_count": 1,
+      "referenced_works": [],
+      "abstract_inverted_index": null,
+      "is_retracted": false
+    }
+  ]
+}

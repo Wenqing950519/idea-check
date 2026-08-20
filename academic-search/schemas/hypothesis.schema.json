@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/academic-search/hypothesis.schema.json",
+  "title": "Research Hypothesis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["hypothesis_id", "text", "rationale", "status", "linked_claim_ids", "created_at"],
+  "properties": {
+    "hypothesis_id": {"type": "string", "minLength": 1},
+    "text": {"type": "string", "minLength": 1},
+    "rationale": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "minLength": 1},
+    "linked_claim_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}
